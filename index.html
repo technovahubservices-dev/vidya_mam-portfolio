@@ -1542,17 +1542,31 @@
 
         /* --- MOBILE --- */
         @media (max-width: 900px) {
-            .sidebar {
-                width: 100%;
+            body {
+                flex-direction: column !important;
                 height: auto;
-                position: relative;
-                border-right: none;
+                overflow-x: hidden;
+            }
+
+            .sidebar {
+                width: 100% !important;
+                height: auto !important;
+                position: relative !important;
+                border-right: none !important;
                 border-bottom: 1px solid var(--border-color);
-                flex-direction: row;
+                flex-direction: row !important;
                 align-items: center;
                 padding: 15px 20px;
                 justify-content: flex-start;
                 gap: 15px;
+                background: var(--bg-panel);
+                /* Ensure opaque background */
+                z-index: 1000;
+            }
+
+            .main-content {
+                margin-left: 0 !important;
+                width: 100% !important;
             }
 
             .profile-section {
@@ -1583,10 +1597,7 @@
                 margin-bottom: 0;
             }
 
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
+            /* Main content rule moved up with !important */
 
             .container {
                 padding: 40px 20px 100px;
@@ -1595,7 +1606,20 @@
             /* Added bottom padding for nav */
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #home .fade-up {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .typewriter {
+                text-align: center;
             }
 
             .stats-grid,
