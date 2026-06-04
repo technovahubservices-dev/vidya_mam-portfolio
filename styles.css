@@ -752,6 +752,12 @@ h1, h2, h3, h4 {
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
+.location {
+    color: var(--text-muted); /* Uses the secondary text color defined in your root */
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
 .timeline-description {
     color: var(--text-muted);
