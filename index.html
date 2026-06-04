@@ -26,9 +26,9 @@
         <div class="nav-container">
             <div class="nav-brand">
                 <span class="brand-text">Vidhyavathi Ramachandran</span>
-                <span class="brand-dot">.</span>
+                
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -41,11 +41,10 @@
                     <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
                     <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
                 </button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+                    <i class="fa-solid fa-bars menu-icon-open" aria-hidden="true"></i>
+                    <i class="fa-solid fa-xmark menu-icon-close" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -56,7 +55,8 @@
             <div class="hero-text">
                 <p class="greeting">Welcome to my portfolio</p>
                 <h1 class="hero-title">
-                    Hello,I am <span class="highlight">Vidhyavathi Ramachandran</span>
+                    Hello, I am<br class="hero-title-break" aria-hidden="true">
+                    <span class="highlight">Vidhyavathi Ramachandran</span>
                 </h1>
                 <p class="typewriter" aria-live="polite">
                     I'm a <span class="type-text" id="type-text"></span><span class="cursor" aria-hidden="true"></span>
@@ -77,7 +77,7 @@
             </div>
             <div class="hero-visual">
                 <div class="floating-card">
-                    <img src="vidyavathi_mam.jpeg" alt="Vidhyavathi Ramachandran" class="profile-img">
+                    <img src="Vidhyavathi_Mam.jpeg" alt="Vidhyavathi Ramachandran" class="profile-img">
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="about-content">
                     <p class="about-text">
                         I'm a passionate automation expert with over 15 years of experience in IT service automation, 
-                        RPA, and enterprise architecture. My journey spans leading rapid, secure enterprise application 
+                        RPA and enterprise architecture. My journey spans leading rapid, secure enterprise application 
                         delivery in Agile environments for banking and insurance sectors globally.
                     </p>
                     <p class="about-text">
@@ -163,7 +163,7 @@
                         </div>
                         <div class="expertise">
                             Expert in designing and implementing end-to-end robotic process automation solutions for banking and 
-                            insurance sectors. Specialized in complex data extraction, document processing, and legacy system integration
+                            insurance sectors. Specialized in complex data extraction, document processing and legacy system integration
                         </div>
                         <div class="skill-tags">
                             <span class="tag">UiPath</span>
@@ -179,7 +179,7 @@
                             <div class="skill-fill" style="width: 90%"></div>
                         </div>
                         <div class="expertise">
-                            Comprehensive experience in business process management, workflow optimization, and end-to-end automation strategy.
+                            Comprehensive experience in business process management, workflow optimization and end-to-end automation strategy.
                             Successfully automated over 200+ business processes with significant ROI improvements.
                         </div>
                         <div class="skill-tags">
@@ -200,7 +200,7 @@
                             <div class="skill-fill" style="width: 88%"></div>
                         </div>
                         <div class="expertise">
-                            Expert in designing scalable enterprise systems, microservices architecture, and integration patterns. 
+                            Expert in designing scalable enterprise systems, microservices architecture and integration patterns. 
                             Deep understanding of legacy system modernization and digital transformation strategies.
                         </div>
                         <div class="skill-tags">
@@ -216,7 +216,7 @@
                         <div class="skill-bar">
                             <div class="skill-fill" style="width: 80%"></div>
                         </div>
-                        <div class="expertise">Proficient in cloud architecture design, deployment, and management. 
+                        <div class="expertise">Proficient in cloud architecture design, deployment and management. 
                             Experience with multi-cloud strategies and implementing scalable, secure cloud solutions for enterprise applications</div>
                         <div class="skill-tags">
                             <span class="tag">AWS</span>
@@ -237,7 +237,7 @@
                         </div>
                         <div class="expertise">
                             PMP-certified project manager with 15+ years of experience managing large-scale IT projects. 
-                            Expert in stakeholder management, risk assessment, and delivering projects on time and within budget.
+                            Expert in stakeholder management, risk assessment and delivering projects on time and within budget.
                         </div>
                         <div class="skill-tags">
                             <span class="tag">PMP</span>
@@ -253,7 +253,7 @@
                             <div class="skill-fill" style="width: 85%"></div>
                         </div>
                         <div class="expertise">
-                            Skilled in leading agile teams, facilitating ceremonies, and driving continuous improvement. 
+                            Skilled in leading agile teams, facilitating ceremonies and driving continuous improvement. 
                             Experience in scaling agile practices across large organizations and managing cross-functional teams.
                         </div>
                         <div class="skill-tags">
@@ -281,7 +281,7 @@
                         <p class="timeline-period">2020 - Present</p>
                         <p class="timeline-description">
                             Founded and leading TechnovaHub, a technology-driven automation solutions company. 
-                            Driving innovation in automation, digital transformation, and business process optimization. 
+                            Driving innovation in automation, digital transformation and business process optimization. 
                             Building a team of talented professionals to deliver world-class automation solutions.
                         </p>
                     </div>
@@ -407,7 +407,31 @@
             </div>
         </div>
     </section>
-
+    <section id="expertise" class="expert">
+        <h2 class="section-title fade-up">My Expertise</h2>
+            <div class="bento-grid">
+                <div class="bento-card span-2 fade-up">
+                    <i class="fas fa-robot bento-icon"></i>
+                    <h3 class="bento-title">Intelligent Automation</h3>
+                    <p class="bento-text">Designing end-to-end automation strategies using RPA and AI to streamline operations, specifically for Banking & Insurance sectors. Reducing operational costs by up to 40% through intelligent bot deployment.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <i class="fas fa-globe-americas bento-icon"></i>
+                    <h3 class="bento-title">Global Delivery</h3>
+                    <p class="bento-text">Proven track record of on-site client coordination in Uruguay & USA, managing distributed Agile teams across time zones.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <i class="fas fa-users-cog bento-icon"></i>
+                    <h3 class="bento-title">Agile Leadership</h3>
+                    <p class="bento-text">Transforming legacy waterfall processes into rapid Agile delivery pipelines. Certified Scrum Master and Product Owner.</p>
+                </div>
+                <div class="bento-card span-2 fade-up">
+                    <i class="fas fa-lightbulb bento-icon"></i>
+                    <h3 class="bento-title">Strategic Innovation</h3>
+                    <p class="bento-text">As Founder of TechnovaHub, I focus on nurturing future-ready talent and building bespoke digital solutions that drive business growth in the Indian market.</p>
+                </div>
+            </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -420,7 +444,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <a href="mailto:vidhyavathi@technovahub.com">vidhyavathi@technovahub.com</a>
+                            <a href="mailto:r.vidhyavathi@gmail.com">r.vidhyavathi@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -434,7 +458,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>48, Lawspet Main Road, Puducherry</p>
+                            <p>No.48, Lawspet Main Road, Puducherry</p>
                         </div>
                     </div>
                 </div>
@@ -467,16 +491,16 @@
                     <p> Automation Expert • Founder & MD of TechnovaHub</p>
                     <p class="footer-tagline">
                         Transforming businesses through intelligent automation,
-                    digital innovation, and technology leadership.
+                    digital innovation and technology leadership.
                     </p>
                 </div>
 
                 <div class="footer-bottom">
                     <div class="footer-socials">
-                        <a href="#" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/vidhyavathi-ramachandran-1a90b367/" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" aria-label="GitHub">
+                        <a href="https://github.com/technovahub2025" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" aria-label="Twitter">
@@ -484,7 +508,7 @@
                         </a>
                     </div>
                     <p>
-                        © 2026 Vidhyavathi Ramachandran. All Rights Reserved.
+                        © 2026 TechnovaHub. All Rights Reserved.
                     </p>
                 </div>
             </div>

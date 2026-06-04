@@ -101,23 +101,27 @@ document.addEventListener('DOMContentLoaded', initTypewriter);
 
 document.addEventListener('DOMContentLoaded', initTypewriter);
 // Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu =document.querySelector('.nav-menu');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+function setMobileMenuOpen(isOpen) {
+    if (navMenu) {
+        navMenu.classList.toggle('active', isOpen);
+    }
+    if (mobileMenuToggle) {
+        mobileMenuToggle.classList.toggle('active', isOpen);
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    }
+}
+
+if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+        setMobileMenuOpen(!navMenu.classList.contains('active'));
     });
 }
 
 function closeMobileMenu() {
-    if (navMenu) {
-        navMenu.classList.remove('active');
-    }
-    if (hamburger) {
-        hamburger.classList.remove('active');
-    }
+    setMobileMenuOpen(false);
 }
 
 // Intersection Observer for animations
@@ -246,12 +250,6 @@ if (contactForm) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-
-        // Validate message length
-        if (message.length < 10) {
-            showNotification('Message should be at least 10 characters long', 'error');
             return;
         }
 
@@ -499,11 +497,23 @@ if ('IntersectionObserver' in window) {
 
 // Add active state to nav links
 function updateActiveNavLink() {
-    navLinks.forEach(link => link.classList.remove('active'));
-    const currentSection = document.querySelector(`section[id]:in-viewport`);
-    if (currentSection) {
-        const activeLink = document.querySelector(`.nav-link[href="#${currentSection.id}"]`);
-        if (activeLink) activeLink.classList.add('active');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+    let activeSectionId = "";
+    
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+            activeSectionId = section.getAttribute('id');
+        }
+    });
+    if (activeSectionId) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${activeSectionId}`) {
+                link.classList.add('active');
+            }
+        });
     }
 }
 
