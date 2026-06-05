@@ -46,7 +46,7 @@ initTheme();
 // Typewriter effect
 // Typewriter effect
 const typewriterWords = [
-    'Automation Expert',
+    'Automation Consultant',
     'RPA Specialist',
     'Founder & MD',
     'Tech Innovator'
